@@ -7,9 +7,18 @@ export default function ClientProjectsPage() {
 	console.log(router.pathname)
 	console.log(router.query)
 
+	function loadProjectHandler() {
+		// ...load data
+		router.push({
+			pathname: "/clients/[id]/[clientid]",
+			query: { id: "oan", clientprojectid: "projectcta" }
+		})
+	}
+
 	return (
 		<div>
 			<h1>The projects of a given client page</h1>
+			<button onClick={loadProjectHandler}>Load Project A</button>
 		</div>
 	)
 }
